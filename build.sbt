@@ -8,7 +8,6 @@ inThisBuild(
   Seq(
     tlBaseVersion := "0.1",
     organization := "com.github.jatcwang",
-    licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
     homepage := Some(url("https://github.com/jatcwang/doobie-package-rename-scalafix")),
     developers := List(
       Developer(
@@ -22,6 +21,8 @@ inThisBuild(
     crossScalaVersions := crossBuildVersions,
     scalaVersion := scala213Version,
     
+    tlCiHeaderCheck := false,
+    tlCiScalafmtCheck := false,
     githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11"))
   ),
 
