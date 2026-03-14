@@ -1,0 +1,75 @@
+# -------------------------------------------------
+# JVM / General
+# -------------------------------------------------
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+hs_err_pid*
+replay_pid*
+
+# -------------------------------------------------
+# sbt
+# -------------------------------------------------
+target/
+project/target/
+project/project/
+project/metals.sbt
+project/boot/
+project/plugins/project/
+.bsp/
+.metals/
+.bloop/
+
+# dependency resolution caches
+lib_managed/
+src_managed/
+
+# -------------------------------------------------
+# Mill
+# -------------------------------------------------
+out/
+
+# -------------------------------------------------
+# Scala CLI
+# -------------------------------------------------
+.scala-build/
+.scala-build-target/
+.scala-build-staging/
+
+# -------------------------------------------------
+# Coursier / dependency caches (optional)
+# usually global but sometimes appear locally
+# -------------------------------------------------
+.coursier/
+
+# -------------------------------------------------
+# IDEs
+# -------------------------------------------------
+
+# IntelliJ / IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Metals (Scala language server)
+.metals/
+
+# -------------------------------------------------
+# OS / misc
+# -------------------------------------------------
+.DS_Store
+Thumbs.db
