@@ -1,6 +1,7 @@
 package fix
 
 import org.typelevel.doobie._
+import org.typelevel.doobie.Fragment.empty
 
 object App {
   
@@ -9,5 +10,6 @@ object App {
   type X = org.typelevel.doobie.SomeAlias
 
   val x = org.typelevel.doobie.syntax.all.x
-  
+
+  val em: org.typelevel.doobie.Fragment = empty
 }

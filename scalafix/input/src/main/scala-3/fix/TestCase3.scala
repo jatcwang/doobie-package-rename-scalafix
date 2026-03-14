@@ -3,7 +3,8 @@ rule = DoobiePackageRename
 */
 package fix
 
-import doobie._
+import doobie.*
+import doobie.Fragment.empty
 
 object App {
   
@@ -12,5 +13,6 @@ object App {
   type X = doobie.SomeAlias
 
   val x = doobie.syntax.all.x
-  
+
+  val em: doobie.Fragment = empty
 }
