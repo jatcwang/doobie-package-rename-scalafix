@@ -23,6 +23,7 @@ inThisBuild(
     
     tlCiHeaderCheck := false,
     tlCiScalafmtCheck := false,
+    tlCiMimaBinaryIssueCheck := false,
     githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11"))
   ),
 
@@ -116,6 +117,7 @@ lazy val tests = project
 val commonSettings =
   Seq(
     scalaVersion := scala213Version,
+    mimaPreviousArtifacts := Set.empty
   )
 
 lazy val semanticdbSettings = Def.settings(

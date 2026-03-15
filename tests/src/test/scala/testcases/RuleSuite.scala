@@ -1,4 +1,4 @@
-package fix
+package testcases
 
 import scalafix.testkit.AbstractSemanticRuleSuite
 import org.scalatest.funsuite.AnyFunSuiteLike

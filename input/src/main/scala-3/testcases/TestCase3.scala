@@ -1,7 +1,7 @@
 /*
 rule = DoobiePackageRename
 */
-package fix
+package testcases
 
 import doobie.*
 import doobie.Fragment.empty
@@ -15,4 +15,6 @@ object App {
   val x = doobie.syntax.all.x
 
   val em: doobie.Fragment = empty
+
+  val n = another.doobie.notThisOne
 }

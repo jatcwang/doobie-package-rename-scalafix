@@ -1,4 +1,4 @@
-package fix
+package testcases
 
 import scalafix.v1._
 import scala.meta._
@@ -25,7 +25,7 @@ class DoobiePackageRename extends SemanticRule("DoobiePackageRename") {
       case Importer(refTerm, _) if isDoobiePackage(refTerm.symbol) =>
         Patch.replaceTree(refTerm, newPackage)
       // Handle package declarations
-      case pkg @ Pkg(ref, _) =>
+      case Pkg.After_4_9_9(ref, _) =>
         val pkgName = ref.syntax
         if (isDoobiePackageName(pkgName)) {
           Patch.replaceTree(ref, newPackage)

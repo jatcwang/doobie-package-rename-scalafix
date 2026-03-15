@@ -1,6 +1,6 @@
-package fix
+package testcases
 
-import org.typelevel.doobie._
+import org.typelevel.doobie.*
 import org.typelevel.doobie.Fragment.empty
 
 object App {
@@ -12,4 +12,6 @@ object App {
   val x = org.typelevel.doobie.syntax.all.x
 
   val em: org.typelevel.doobie.Fragment = empty
+
+  val n = another.doobie.notThisOne
 }
