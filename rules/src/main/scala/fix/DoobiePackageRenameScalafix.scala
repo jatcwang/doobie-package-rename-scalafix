@@ -12,6 +12,10 @@ class DoobiePackageRename extends SemanticRule("DoobiePackageRename") {
     normalized == "doobie." || normalized == "_root_.doobie."
   }
 
+  private def isDoobiePackageName(name: String): Boolean = {
+    name == "doobie" || name == "_root_.doobie"
+  }
+
   override def fix(implicit doc: SemanticDocument): Patch = {
     doc.tree.collect {
       case ref @ Term.Select(qual: Term.Name, name) if isDoobiePackage(qual.symbol) =>
@@ -20,6 +24,14 @@ class DoobiePackageRename extends SemanticRule("DoobiePackageRename") {
         Patch.replaceTree(ref, s"$newPackage.$name")
       case Importer(refTerm, _) if isDoobiePackage(refTerm.symbol) =>
         Patch.replaceTree(refTerm, newPackage)
+      // Handle package declarations
+      case pkg @ Pkg(ref, _) =>
+        val pkgName = ref.syntax
+        if (isDoobiePackageName(pkgName)) {
+          Patch.replaceTree(ref, newPackage)
+        } else {
+          Patch.empty
+        }
     }.asPatch
   }
 
