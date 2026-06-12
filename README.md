@@ -8,7 +8,7 @@ To avoid breakages, it is necessary for us to rename any references to
 
 This Scalafix rule will perform that rename for you across your project.
 
-## Running this migration scalafix rule 
+## Running this migration Scalafix rule
 
 To run the rule against another sbt project:
 
@@ -25,24 +25,8 @@ To run the rule against another sbt project:
      "com.github.jatcwang" %% "doobie-package-rename-scalafix" % "0.1.1"
    ```
 
-3. Enable SemanticDB for the project you want to rewrite.
-
-   For Scala 2:
-
-   ```scala
-   semanticdbEnabled := true
-   semanticdbVersion := scalafixSemanticdb.revision
-   scalacOptions += "-Yrangepos"
-   ```
-
-   For Scala 3:
-
-   ```scala
-   scalacOptions += "-Xsemanticdb"
-   ```
-
-4. Compile the project, then run the rule:
+3. Enable Scalafix, compile the project, then run the rule:
 
    ```sh
-   sbt --client "compile ; scalafix DoobiePackageRename"
+   sbt --client "scalafixEnable ; compile ; scalafix DoobiePackageRename"
    ```
